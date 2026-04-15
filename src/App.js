@@ -41,6 +41,7 @@ function App() {
             <span><i class="fa-brands fa-html5" style={{color: '#E54C21'}}></i><br></br>HTML5</span>
             <span><i class="fa-brands fa-css" style={{color: '#66309A'}}></i><br></br>CSS3</span>
             <span><i class="fa-brands fa-react" style={{color: '#61DBFB'}}></i><br></br>ReactJs</span>
+            <span><i class="fa-brands fa-angular" style={{color: '#C50032'}}></i><br></br>Angular</span>
             <span><i class="fa-solid fa-database" style={{color: '#E3752C'}}></i><br></br>MySQL</span>
             <span><i class="fa-solid fa-chart-line" style={{color: '#1ff718'}}></i><br></br>Metodologias ágeis</span>
             <span><i class="fa-solid fa-handshake" style={{color: '#d4bf00'}}></i><br></br>Trabalho em equipe</span>
@@ -50,10 +51,23 @@ function App() {
 
         <Element name='hobbies'>
           <h1>Hobbies</h1>
+          <div className='listagem'>
+            <span><i class="fa-solid fa-gamepad" style={{color: '#bb08e7'}}></i><br></br>Videogames</span>
+            <span><i class="fa-solid fa-tv"></i><br></br>Filmes/séries</span>
+            <span><i class="fa-solid fa-dice-d20" style={{color: '#ff0000'}}></i><br></br>RPG</span>
+            <span><i class="fa-solid fa-person-walking"></i><br></br>Caminhada</span>
+            <span><i class="fa-solid fa-volleyball" style={{color: '#ffef16'}}></i><br></br>Vôlei</span>
+            <span><i class="fa-solid fa-book" style={{color: '#0c5ef7'}}></i><br></br>Leitura</span>
+          </div>
         </Element>
 
         <Element name='formacao'>
           <h1>Formação</h1>
+          <div className='listagem'>
+            <span><img src='Integrado.png' alt='Logo Integrado'/><br></br><h3>Centro Universitário Integrado</h3><br></br>Bacharelado em Tecnologia em Análise e Desenvolvimento de Sistemas <br></br><br></br> 2022 - 2024</span>
+            <span><img src='logo-One.png' alt='Logo ONE'/><br></br><h3>Oracle Next Education</h3><br></br>Curso de Especialização em Front end<br></br><br></br> 2024</span>
+            <span><img src='UNOPAR.jpg' alt='Logo UNOPAR'/><br></br><h3>UNOPAR</h3><br></br>Pós graduação em Front end<br></br><br></br> 2025 - em andamento</span>
+          </div>
         </Element>
 
         <Element id='projetos'>
