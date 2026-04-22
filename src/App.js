@@ -1,5 +1,10 @@
 import { Element, Link } from 'react-scroll';
 import './App.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Projeto from './components/Projeto/Projeto';
 
 function App() {
   return (
@@ -72,6 +77,45 @@ function App() {
 
         <Element id='projetos'>
           <h1>Projetos</h1>
+            <Swiper
+            modules={[Navigation]}
+            navigation
+            direction='horizontal'
+            loop={true}
+            >
+              <SwiperSlide>
+                <Projeto 
+                  projeto={'Aluraflix'}
+                  descricao={'Projeto criado como parte do programa ONE, ele demonstra como apresentar e inserir novos dados em uma API utilizando REACT'}
+                  rep={'https://github.com/Kaue-C-Matos/challenge-aluraflix'}
+                  dep={'https://challenge-aluraflix-eight.vercel.app'}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Projeto 
+                  projeto={'Pokedex'}
+                  descricao={'Um clássico! Demonstra mais de meu conhecimento com react e com consumo de APIs existentes'}
+                  rep={'https://github.com/Kaue-C-Matos/pokedex'}
+                  dep={'https://pokedex-liart-chi.vercel.app'}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Projeto 
+                  projeto={"Decodificador de texto"}
+                  descricao={'Demonstra como utilizar Javascript para manipular e controlar elementos do site'}
+                  rep={'https://github.com/Kaue-C-Matos/challenge-ONE-decodificador'}
+                  dep={'https://kaue-c-matos.github.io/challenge-ONE-decodificador/'}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Projeto 
+                  projeto={'Alurageek'}
+                  descricao={'Este projeto demonstra o uso de um CRUD em um projeto em tempo real com servidor próprio'}
+                  rep={'https://github.com/Kaue-C-Matos/Challenge---alurageek'}
+                  dep={'https://kaue-c-matos.github.io/Challenge---alurageek/'}
+                />
+              </SwiperSlide>
+            </Swiper>
         </Element>
       </main>
     </div>
