@@ -3,4 +3,5 @@
   padding:  30px 70px;
   gap: 50px;
   align-items: center;
+  z-index: 1;
 }
