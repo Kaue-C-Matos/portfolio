@@ -5,8 +5,43 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Projeto from './components/Projeto/Projeto';
+import { useState } from 'react';
+import emailjs from "@emailjs/browser"
 
 function App() {
+  const [nome, setNome] = useState("")
+  const [email, setEmail] = useState("")
+  const [assunto, setAssunto] = useState("")
+  const [mensagem, setMensagem] = useState("")
+
+  function enviarEmail(e){
+    e.preventDefault();
+
+    if(nome === "" || email === "" || assunto === "" || mensagem === ""){
+      alert("Por favor, preencha todos os campos")
+      return;
+    }
+
+    const emailParams = {
+      name: nome,
+      email: email,
+      title: assunto,
+      message: mensagem
+    }
+
+    emailjs.send("service_w9k8u1c", "template_tarho7a", emailParams, "2iZ_RLZqbnzC1rINi")
+    .then((response)=>{
+      console.log("Email enviado", response.status, response.text)
+      alert("Email enviado com sucesso!")
+      setNome("")
+      setEmail("")
+      setAssunto("")
+      setMensagem("")
+    }, (error) =>{
+      console.log("Erro: ", error)
+    })
+  }
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +52,7 @@ function App() {
           <Link to='hobbies' smooth={true} offset={-120}>Hobbies</Link>
           <Link to='formacao' smooth={true} offset={-120}>Formação</Link>
           <Link to='projetos' smooth={true} offset={-120}>Projetos</Link>
+          <Link to='contato' smooth={true} offset={-120}>Contato</Link>
         </nav>
       </header>
       <main>
@@ -117,7 +153,59 @@ function App() {
               </SwiperSlide>
             </Swiper>
         </Element>
+        <Element id='contato'>
+          <h1>Entre em contato</h1>
+          <div id='contato_container'>
+            <img src='telefone.jpg' alt='Telefone'/>
+            <form id='contato_form' onSubmit={enviarEmail}>
+              <div>
+                <label htmlFor='nome'><b>Nome:</b><br></br></label>
+                <input 
+                  id='nome' 
+                  className='contato_campo' 
+                  type='text' 
+                  required
+                  value={nome}
+                  onChange={(e)=>{setNome(e.target.value)}}/> 
+              </div>
+              <div>
+                <label htmlFor='email'><b>E-mail:</b><br></br></label>
+                <input 
+                  id='email' 
+                  className='contato_campo' 
+                  type='email' 
+                  required
+                  value={email}
+                  onChange={(e)=>{setEmail(e.target.value)}}/> 
+              </div>
+              <div>
+                <label htmlFor='assunto'><b>Assunto:</b><br></br></label>
+                <input 
+                  id='assunto' 
+                  className='contato_campo' 
+                  type='text' 
+                  required
+                  value={assunto}
+                  onChange={(e)=>{setAssunto(e.target.value)}}/> 
+              </div>
+              <div>
+                <label htmlFor='mensagem'><b>Mensagem:</b><br></br></label>
+                <textarea 
+                  id='mensagem' 
+                  className='contato_campo' 
+                  required
+                  value={mensagem}
+                  onChange={(e)=>{setMensagem(e.target.value)}}></textarea> 
+              </div>
+              <button type='submit' id='contato_botao'>Enviar</button>
+            </form>
+          </div>
+        </Element>
       </main>
+
+      <footer>
+        Desenvolvido por Kauê da Costa Matos - 2026
+      </footer>
     </div>
   );
 }
