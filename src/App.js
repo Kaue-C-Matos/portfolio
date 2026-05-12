@@ -47,23 +47,26 @@ function App() {
       <header className="App-header">
         <h1> <i class="fa-solid fa-code"></i> Kauê da Costa Matos</h1>
         <nav>
-          <Link to='sobre mim' smooth={true} offset={-120}>Sobre mim</Link>
-          <Link to='skills' smooth={true} offset={-120}>Skills</Link>
-          <Link to='hobbies' smooth={true} offset={-120}>Hobbies</Link>
-          <Link to='formacao' smooth={true} offset={-120}>Formação</Link>
-          <Link to='projetos' smooth={true} offset={-120}>Projetos</Link>
-          <Link to='contato' smooth={true} offset={-120}>Contato</Link>
+          <Link to='sobre mim' smooth={true} offset={-100}>Sobre mim</Link>
+          <Link to='skills' smooth={true} offset={-80}>Skills</Link>
+          <Link to='hobbies' smooth={true} offset={-80}>Hobbies</Link>
+          <Link to='formacao' smooth={true} offset={-80}>Formação</Link>
+          <Link to='projetos' smooth={true} offset={-80}>Projetos</Link>
+          <Link to='contato' smooth={true} offset={-80}>Contato</Link>
         </nav>
       </header>
       <main>
-        <Element name='sobre mim'>
-          <h1>Sobre mim</h1>
-          <div id='apresentacao'>
+        <Element name='sobre mim' >
+          <div id='apresentacao' className='sessao'>
             <div>
-              <h2 id='tag'>Front end</h2>
+              <h1>Sobre mim</h1>
               <p>Olá! Sou apaixonado por programação e tecnologia em geral, além disso, tenho muita facilidade em 
                 aprender e trabalhar em equipe. Hoje em dia possuo grande conhecimento na área de Front end,
                 e espero conseguir minha primeira oportunidade nesse mercado.</p>
+                <h4>
+                  <span id='tag' style={{color: "blue", borderColor:"blue"}}>Front end</span>
+                  <span id='tag' style={{color: "#ff0000", borderColor:"#ff0000"}}>Full Stack</span>
+                </h4>
               <nav>
                 <a href='https://github.com/Kaue-C-Matos'><i class="fa-brands fa-github"></i> Github</a>
                 <a href='https://instagram.com/kauecm8'><i class="fa-brands fa-instagram"></i> Instagram</a>
@@ -75,7 +78,7 @@ function App() {
           </div>
         </Element>
 
-        <Element name='skills'>
+        <Element name='skills' className='sessao'>
           <h1>Skills</h1>
           <div className='listagem'>
             <span><i class="fa-brands fa-js" style={{color: '#F7E018'}}></i><br></br>Javascript</span>
@@ -90,7 +93,7 @@ function App() {
           </div>
         </Element>
 
-        <Element name='hobbies'>
+        <Element name='hobbies' className='sessao'>
           <h1>Hobbies</h1>
           <div className='listagem'>
             <span><i class="fa-solid fa-gamepad" style={{color: '#bb08e7'}}></i><br></br>Videogames</span>
@@ -102,7 +105,7 @@ function App() {
           </div>
         </Element>
 
-        <Element name='formacao'>
+        <Element name='formacao' className='sessao'>
           <h1>Formação</h1>
           <div className='listagem'>
             <span><img src='Integrado.png' alt='Logo Integrado'/><br></br><h3>Centro Universitário Integrado</h3><br></br>Bacharelado em Tecnologia em Análise e Desenvolvimento de Sistemas <br></br><br></br> 2022 - 2024</span>
@@ -111,7 +114,7 @@ function App() {
           </div>
         </Element>
 
-        <Element id='projetos'>
+        <Element id='projetos' className='sessao'>
           <h1>Projetos</h1>
             <Swiper
             modules={[Navigation]}
@@ -153,7 +156,8 @@ function App() {
               </SwiperSlide>
             </Swiper>
         </Element>
-        <Element id='contato'>
+
+        <Element id='contato' className='sessao'>
           <h1>Entre em contato</h1>
           <div id='contato_container'>
             <img src='telefone.jpg' alt='Telefone'/>

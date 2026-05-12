@@ -39,23 +39,31 @@ nav a:hover{
 }
 
 main{
-  margin-top: 80px;
-  padding: 20px;
+  margin-top: 96px;
   background-color: #FFFADC;
+}
+
+.sessao{
+  padding: 20px;
 }
 
 #apresentacao{
   display: flex;
   gap: 100px;
   justify-content: space-around;
+  align-items: center;
+  background: linear-gradient( #53a6ff, #EAF4FF);
+  border-bottom: #000 solid 2px;
+  border-top: #000 solid 2px;
 }
 
 #tag{
-  color: blue;
-  border: 2px solid blue;
+  border: 2px solid ;
+  font-weight: bold;
   width: fit-content;
   padding: 10px;
   border-radius: 15px;
+  margin-bottom: 20px;
 }
 
 #apresentacao p{
@@ -65,8 +73,8 @@ main{
 }
 
 #apresentacao img{
-  min-width: 300px;
-  height: 300px;
+  min-width: 250px;
+  height: 250px;
   object-fit: cover;
   border-radius: 100%;
 }
