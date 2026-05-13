@@ -20,7 +20,11 @@ header{
   z-index: 10;
 }
 
-nav{
+.mobile-nav{
+  display: none;
+}
+
+.desktop-nav, nav{
   display: flex;
   align-items: center;
   justify-content: start;
@@ -48,13 +52,39 @@ main{
 }
 
 #apresentacao{
-  display: flex;
-  gap: 100px;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 0.9fr 350px;
+  grid-template-rows: 0.5fr 1fr;
+  grid-template-areas:
+    "titulo imagem"
+    "conteudo imagem";
+  justify-content: space-evenly;
   align-items: center;
   background: linear-gradient( #53a6ff, #EAF4FF);
   border-bottom: #000 solid 2px;
   border-top: #000 solid 2px;
+}
+
+#apresentacao h1{
+  grid-area: titulo;
+}
+
+#apresentacao img{
+  grid-area: imagem;
+  min-width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+#apresentacao .conteudo{
+  grid-area: conteudo;
+}
+
+#apresentacao p{
+  text-align: justify;
+  font-size: larger;
+  margin: 40px 0;
 }
 
 #tag{
@@ -64,19 +94,6 @@ main{
   padding: 10px;
   border-radius: 15px;
   margin-bottom: 20px;
-}
-
-#apresentacao p{
-  text-align: justify;
-  font-size: larger;
-  margin: 40px 0;
-}
-
-#apresentacao img{
-  min-width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 100%;
 }
 
 .listagem{
@@ -171,4 +188,73 @@ footer{
   align-items: center;
   font-size: larger;
   font-weight: bold;
+}
+
+@media  screen and (max-width: 768px){
+  header h1{
+    font-size: x-large;
+  }
+
+  .desktop-nav{
+    display: none;
+  }
+
+  .mobile-nav{
+    display: block;
+  }
+
+  .bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 20px;
+  top: 20px;
+  }
+  
+  .bm-burger-bars {
+    background: #000;
+  }
+  
+  .bm-cross{
+    background: #000;
+  }
+
+  .bm-menu {
+    background: var(--cor-primaria);
+    padding: 2.5em 1.5em 0;
+  }
+
+  .bm-item-list{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bm-item{
+    font-size: x-large;
+  }
+
+  main{
+    margin-top: 75px;
+  }
+
+  #apresentacao{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .swiper{
+    height: auto;
+  }
+
+  #contato_container img{
+    display: none;
+  }
+
+  .contato_campo{
+    width: 70vw;
+  }
+
+  footer{
+    font-size: large;
+  }
 }

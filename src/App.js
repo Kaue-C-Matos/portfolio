@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Projeto from './components/Projeto/Projeto';
 import { useState } from 'react';
 import emailjs from "@emailjs/browser"
+import { slide as Menu } from 'react-burger-menu'
 
 function App() {
   const [nome, setNome] = useState("")
@@ -46,7 +47,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1> <i class="fa-solid fa-code"></i> Kauê da Costa Matos</h1>
-        <nav>
+
+        <nav className='desktop-nav'>
           <Link to='sobre mim' smooth={true} offset={-100}>Sobre mim</Link>
           <Link to='skills' smooth={true} offset={-80}>Skills</Link>
           <Link to='hobbies' smooth={true} offset={-80}>Hobbies</Link>
@@ -54,27 +56,39 @@ function App() {
           <Link to='projetos' smooth={true} offset={-80}>Projetos</Link>
           <Link to='contato' smooth={true} offset={-80}>Contato</Link>
         </nav>
+
+        <div className='mobile-nav'>
+          <Menu right>
+            <Link to='sobre mim' smooth={true} offset={-100}>Sobre mim</Link>
+            <Link to='skills' smooth={true} offset={-80}>Skills</Link>
+            <Link to='hobbies' smooth={true} offset={-80}>Hobbies</Link>
+            <Link to='formacao' smooth={true} offset={-80}>Formação</Link>
+            <Link to='projetos' smooth={true} offset={-80}>Projetos</Link>
+            <Link to='contato' smooth={true} offset={-80}>Contato</Link>
+          </Menu>
+        </div>
       </header>
       <main>
         <Element name='sobre mim' >
           <div id='apresentacao' className='sessao'>
-            <div>
               <h1>Sobre mim</h1>
-              <p>Olá! Sou apaixonado por programação e tecnologia em geral, além disso, tenho muita facilidade em 
-                aprender e trabalhar em equipe. Hoje em dia possuo grande conhecimento na área de Front end,
-                e espero conseguir minha primeira oportunidade nesse mercado.</p>
-                <h4>
-                  <span id='tag' style={{color: "blue", borderColor:"blue"}}>Front end</span>
-                  <span id='tag' style={{color: "#ff0000", borderColor:"#ff0000"}}>Full Stack</span>
-                </h4>
-              <nav>
-                <a href='https://github.com/Kaue-C-Matos'><i class="fa-brands fa-github"></i> Github</a>
-                <a href='https://instagram.com/kauecm8'><i class="fa-brands fa-instagram"></i> Instagram</a>
-                <a href='https://www.linkedin.com/in/kaue-da-costa-matos-770140275/'><i class="fa-brands fa-linkedin"></i> Linkedin</a>
-                <a href='Currículo Kauê.pdf'><i class="fa-solid fa-file"></i> Currículo</a>
-              </nav>
-            </div>
-            <img src='perfil.jpg' alt='Foto de perfil'/>
+              <img src='perfil.jpg' alt='Foto de perfil'/>
+              <div className='conteudo'>
+                <p>Olá! Sou apaixonado por programação e tecnologia em geral, além disso, tenho muita facilidade em 
+                  aprender e trabalhar em equipe. Hoje em dia possuo grande conhecimento na área de Front end,
+                  e espero conseguir minha primeira oportunidade nesse mercado.</p>
+                  <h4>
+                    <span id='tag' style={{color: "blue", borderColor:"blue"}}>Front end</span>
+                    <span id='tag' style={{color: "#ff0000", borderColor:"#ff0000"}}>Full Stack</span>
+                  </h4>
+                <nav>
+                  <a href='https://github.com/Kaue-C-Matos'><i class="fa-brands fa-github"></i> Github</a>
+                  <a href='https://instagram.com/kauecm8'><i class="fa-brands fa-instagram"></i> Instagram</a>
+                  <a href='https://www.linkedin.com/in/kaue-da-costa-matos-770140275/'><i class="fa-brands fa-linkedin"></i> Linkedin</a>
+                  <a href='Currículo Kauê.pdf'><i class="fa-solid fa-file"></i> Currículo</a>
+                </nav>
+              </div>
+            
           </div>
         </Element>
 
